@@ -1,0 +1,612 @@
+body {
+  background: url('./images/fondo.jpg') no-repeat center center fixed; /* Imagen centrada y fija */
+  background-size: cover; /* Asegura que la imagen cubra todo el área */
+  margin: 0; /* Elimina márgenes predeterminados del navegador */
+  padding: 0; /* Elimina relleno predeterminado */
+  font-family: Arial, sans-serif; /* Fuente global para el diseño */
+  overflow-x: hidden; /* Previene desplazamiento horizontal inesperado */
+}
+
+
+
+.page-container {
+ 
+  max-width: 100%; /* Ancho máximo de la página */
+  margin: 0 auto; /* Centraliza horizontalmente el contenido */
+  padding: 1px; /* Espaciado interno */
+}
+
+
+
+
+  
+ 
+  
+
+/* Header */
+header {
+  width: 100%;
+  background: linear-gradient(to right,#535353, #020202, #535353); /* Degradado negro a rojo */
+  color: #fff; /* Texto blanco para contraste */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra más sutil para un estilo moderno */
+  display: flex;
+  justify-content: space-between; /* Alinea los elementos del header */
+  align-items: center; /* Centra los elementos verticalmente */
+  padding: 0; /* Espaciado interno */
+  position: sticky; /* Fija el header en la parte superior al hacer scroll */
+  top: 0; /* Mantiene la posición superior */
+  z-index: 1000; /* Asegura que esté encima de otros elementos */
+  border-bottom: 5px solid #690000; /* Borde sólido color naranja brillante */
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3); /* Sombra superior */
+  
+}
+
+/* Logo */
+header .logo img {
+  width: 120px; /* Ajusta el tamaño del logo si es necesario */
+  height: auto; /* Mantén las proporciones originales */
+  display: block;
+  opacity: 0.7; /* Establece la transparencia (0.0 = completamente invisible, 1.0 = sin transparencia) */
+  transition: opacity 0.3s ease; /* Añade una animación suave al cambiar la transparencia */
+}
+
+header .logo img:hover {
+  opacity: 1; /* Recupera la opacidad completa cuando el usuario pasa el mouse por encima */
+}
+
+
+
+header .logo a {
+  text-decoration: none;
+  display: flex; /* Asegura que el logo quede alineado correctamente */
+  align-items: center; /* Centra verticalmente si es necesario */
+}
+
+
+/* header .logo a {
+  text-decoration: none;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #fff; 
+  transition: color 0.3s ease; 
+} */
+
+/* header .logo a:hover {
+  color: #383838; 
+} */
+
+/* Navegación */
+header .nav-links {
+  list-style: none; /* Elimina viñetas */
+  display: flex; /* Muestra los elementos horizontalmente */
+  gap: 20px; /* Espacio entre los enlaces */
+}
+
+header .nav-links li a {
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #fff; /* Texto blanco */
+  padding: 8px 12px; /* Espaciado interno */
+  border-radius: 5px; /* Bordes redondeados */
+  transition: background 0.3s ease, color 0.3s ease; /* Animación suave */
+}
+
+header .nav-links li a:hover {
+  background: #360000; /* Fondo rojo al pasar el mouse */
+  color: #fff; /* Contraste para el texto */
+}
+
+/* Botón hamburguesa para móviles */
+header .burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+header .burger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  header .nav-links {
+    display: none; /* Oculta los enlaces en pantallas pequeñas */
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.9); /* Fondo oscuro */
+    position: absolute;
+    top: 100%; /* Justo debajo del header */
+    right: 0;
+    gap: 15px;
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  header .nav-links.active {
+    display: flex; /* Muestra los enlaces cuando el menú está activo */
+  }
+
+  header .burger {
+    display: flex; /* Muestra el botón hamburguesa */
+  }
+
+  header .burger span:hover {
+    background: #ff1a1a; /* Color rojo al pasar el mouse */
+  }
+}
+
+
+
+
+#home-title {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Ocupa toda la ventana */
+  overflow: hidden; /* Evita que las imágenes sobresalgan */
+  text-align: center;
+  color: #fff; /* Texto blanco */
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Toda la ventana */
+  overflow: hidden; /* Evitar contenido desbordado */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.carousel-images {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  height: 100%; /* Ocupa el alto completo del contenedor */
+}
+
+.carousel-images img {
+  max-width: 100%; /* Asegúrate de que la imagen no exceda el ancho del contenedor */
+  max-height: 100%; /* Asegúrate de que la imagen no exceda la altura del contenedor */
+  object-fit: cover; /* Ajusta las imágenes para que quepan completamente dentro del contenedor */
+}
+
+
+
+
+#home-title h1 {
+  position: relative;
+  z-index: 2; /* El texto encima de las imágenes */
+}
+
+
+
+
+
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px 20px;
+}
+
+/* Logo */
+.logo a {
+  text-decoration: none;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #fff; /* Color del texto */
+  letter-spacing: 1px;
+}
+
+/* Navegación */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px; /* Espacio entre los enlaces */
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #ffdde1; /* Efecto al pasar el cursor */
+}
+
+/* Botón hamburguesa para móviles */
+.burger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.burger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: white;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* Oculta los enlaces en vista móvil */
+    flex-direction: column;
+    gap: 10px;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: rgba(255, 117, 140, 0.9);
+    border-radius: 8px;
+    padding: 15px;
+  }
+
+  .nav-links.active {
+    display: flex; /* Muestra los enlaces cuando el menú está activo */
+  }
+
+  .burger {
+    display: flex; /* Muestra el botón hamburguesa */
+  }
+}
+
+  
+  /* General Card Style */
+  .card {
+    display: flex;
+    align-items: center; /* Alinea verticalmente el contenido */
+    gap: 20px; /* Espacio entre el carrusel y el texto */
+    margin: 30px auto; /* Más margen para destacar las cards */
+    padding: 25px; /* Espacio interno mayor */
+    border: 2px solid #ddd; /* Bordes más visibles */
+    border-radius: 12px; /* Bordes ligeramente redondeados */
+    background-color: #fff;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15); /* Sombra más profunda */
+    max-width: 1000px; /* Ancho máximo mayor */
+    min-height: 300px; /* Altura mínima más grande */
+  }
+  
+  .card img {
+    width: 120px; /* Reduce el tamaño de la imagen */
+    height: 120px;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  
+  /* Imagen a la izquierda */
+  .card.left {
+    flex-direction: row;
+  }
+  
+  
+  
+  /* Imagen a la derecha */
+  .card.right {
+    flex-direction: row-reverse;
+  }
+  
+  
+  
+ 
+  
+  /* Contenido del card */
+  .card-content {
+    flex: 2; /* El texto ocupa más espacio que el carrusel */
+  }
+  
+  .card-content h2 {
+    font-size: 2rem; /* Tamaño más grande para el título */
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  .card-content p {
+    font-size: 1.2rem; /* Texto ligeramente más grande */
+    line-height: 1.6; /* Mejora la legibilidad */
+    color: #555;
+  }
+  
+  @media (max-width: 768px) {
+    .card {
+      flex-direction: column; /* Cambia a diseño vertical */
+      text-align: center;
+    }
+  
+    .card-carousel {
+      max-width: 100%; /* Ancho completo en pantallas pequeñas */
+      height: 200px; /* Reducir la altura para móviles */
+    }
+  
+    .card-carousel button {
+      padding: 10px; /* Botones más pequeños en móviles */
+    }
+  
+    .card-content {
+      flex: none; /* Se ajusta automáticamente al diseño */
+    }
+  }
+
+
+ 
+
+  .card-carousel {
+    position: relative; /* Los botones se posicionan dentro del carrusel */
+    flex: 1;
+    max-width: 400px; /* Tamaño ajustado del carrusel */
+    height: 300px;
+    overflow: hidden; /* Oculta contenido que sobresale */
+    border-radius: 12px; /* Para un diseño limpio */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-carousel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none; /* Oculta todas las imágenes por defecto */
+  }
+  
+  
+  
+  
+  /* Botones del carrusel */
+  .card-carousel button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.4); /* Fondo semitransparente */
+    color: white; /* Color del icono */
+    border: none;
+    padding: 15px;
+    border-radius: 50%; /* Botón redondo */
+    font-size: 18px; /* Tamaño del icono */
+    cursor: pointer;
+    z-index: 2;
+    transition: all 0.3s ease;
+  }
+  
+  .card-carousel button:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+    transform: translateY(-50%) scale(1.1);
+  }
+  
+  
+  /* Ajustar posición de los botones */
+.card-carousel-prev {
+  left: 10px; /* Colocado en el borde izquierdo */
+}
+
+.card-carousel-next {
+  right: 10px; /* Colocado en el borde derecho */
+}
+  
+  
+  /* Imagen visible al inicio */
+  .card-carousel img:first-child {
+    display: block; /* Muestra la primera imagen por defecto */
+  }
+  
+  
+  
+  /* About Us Section */
+  #about {
+    padding: 60px 20px; /* Espaciado interno */
+    max-width: 1400px; /* Ancho máximo */
+    margin: 30px auto; /* Centra la sección y añade margen superior e inferior */
+    background: #fff; /* Fondo blanco para contraste */
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra alrededor de la sección */
+    border: 2px solid rgba(0, 0, 0, 0.1); /* Borde sutil */
+  }
+  
+
+.about-container {
+  display: flex;
+  gap: 30px; /* Mayor espacio entre el texto y el carrusel */
+  flex-wrap: wrap; /* Asegura que los elementos se ajusten en pantallas pequeñas */
+  align-items: center; /* Alinea los elementos verticalmente */
+}
+
+.about-text {
+  flex: 1.2; /* Aumenta la proporción de espacio para el texto */
+  max-width: 600px; /* Permite que el texto ocupe más ancho */
+  text-align: left;
+}
+
+.about-text h2 {
+  font-size: 3rem; /* Agranda el tamaño del título */
+  color: #666666;
+  margin-bottom: 25px;
+}
+
+.about-text p {
+  font-size: 1.4rem; /* Texto más grande */
+  line-height: 1.8; /* Mejora la legibilidad con mayor separación */
+  color: #333;
+}
+
+.main-carousel {
+  flex: 2; /* Proporción mayor para el carrusel */
+  max-width: 800px; /* Mayor ancho del carrusel */
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px; /* Bordes más suaves */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+  height: 500px; /* Ajusta la altura del carrusel */
+}
+/* .main-carousel img, 
+.main-carousel video {
+  display: block;
+  margin: 0 auto; 
+  max-width: 100%; 
+  max-height: 100%; 
+  object-fit: contain; 
+} */
+
+
+/* .main-carousel img {
+  width: 100%;
+  height: 100%; 
+  object-fit: cover;
+} */
+
+.main-carousel img {
+  display: block;
+  width: 100%; /* Ajusta al ancho del contenedor */
+  height: auto; /* Mantiene la proporción */
+  object-fit: contain; /* Ajusta la imagen sin recortarla */
+  max-height: 500px; /* Controla la altura máxima, ajusta según tu diseño */
+  margin: 0 auto; /* Centra la imagen horizontalmente */
+}
+
+
+.main-carousel button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+  border: none;
+  padding: 12px 18px; /* Botones más grandes */
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 18px; /* Aumenta el tamaño de los iconos */
+  transition: all 0.3s ease;
+}
+
+.main-carousel button#prev {
+  left: 15px; /* Mayor separación del borde izquierdo */
+}
+
+.main-carousel button#next {
+  right: 15px; /* Mayor separación del borde derecho */
+}
+
+.main-carousel button:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  transform: translateY(-50%) scale(1.2); /* Botones más grandes al pasar el mouse */
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    align-items: center; /* Centra el contenido */
+  }
+
+  .about-text {
+    text-align: center;
+  }
+
+  .main-carousel {
+    max-width: 100%; /* Se ajusta al ancho disponible */
+    height: 400px; /* Reduce la altura en pantallas pequeñas */
+  }
+}
+
+  /* Contact Section (Footer) */
+
+/* Contact Section (Footer) */
+#contact {
+  background: linear-gradient(to right, #535353, #020202, #535353); /* Fondo degradado */
+  color: #fff;
+  padding: 20px 50px;
+  display: flex;
+  flex-direction: column; /* Coloca los elementos en columna */
+  align-items: center; /* Centra horizontalmente */
+  justify-content: center; /* Centra verticalmente */
+  text-align: center; /* Asegura que el texto esté centrado */
+  border-top: 5px solid #690000; /* Borde sólido color naranja brillante */
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3); /* Sombra superior */
+}
+
+#contact h2 {
+  flex: none; /* Evita el comportamiento proporcional */
+  text-align: center; /* Centra el título horizontalmente */
+  font-size: 2rem; /* Tamaño del texto */
+  color: #fff; /* Texto blanco */
+  margin-bottom: 20px; /* Espacio entre el título y las ul */
+  margin-top: -10px; /* Mueve el título hacia arriba */
+}
+
+#contact ul {
+  display: flex; /* Coloca los enlaces en una fila */
+  justify-content: center; /* Centra los enlaces */
+  flex-wrap: wrap; /* Permite múltiples filas si es necesario */
+  gap: 15px; /* Espacio entre los enlaces */
+  padding: 0;
+  list-style: none;
+  margin: 10px;
+  
+}
+
+#contact ul li a {
+  text-decoration: none; /* Elimina el subrayado de los enlaces */
+  color: #fff; /* Texto blanco */
+  font-size: 1.1rem;
+  padding: 10px 15px; /* Espaciado interno de los enlaces */
+  border-radius: 8px; /* Bordes redondeados */
+  background: rgba(255, 255, 255, 0.1); /* Fondo translúcido */
+  transition: all 0.3s ease; /* Animación suave */
+}
+
+#contact ul li a:hover {
+  background: #6e0202; /* Fondo rojo al pasar el mouse */
+  color: #fff; /* Texto blanco */
+  transform: scale(1.1); /* Efecto de aumento */
+}
+
+
+/* Responsividad */
+@media (max-width: 768px) {
+  #contact {
+    flex-direction: column; /* Apila los elementos en pantallas pequeñas */
+    align-items: center; /* Centra todos los elementos */
+  }
+
+  #contact h2 {
+    text-align: center; /* Centra el título */
+    margin-bottom: 20px; /* Espaciado debajo del título */
+  }
+
+  #contact ul {
+    justify-content: center; /* Centra los enlaces */
+    gap: 15px; /* Menor espacio entre enlaces en pantallas pequeñas */
+  }
+}
+
+
+
+/* #bg-video {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+  z-index: -1; 
+} */
